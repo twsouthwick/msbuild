@@ -24,7 +24,9 @@ namespace Microsoft.Build.Shared
     /// !~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~
     ///     
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class InternalErrorException : Exception
     {
         /// <summary>

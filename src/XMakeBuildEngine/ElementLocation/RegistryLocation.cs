@@ -20,7 +20,9 @@ namespace Microsoft.Build.Construction
     /// This is not public because the current implementation only provides correct data for unedited projects.
     /// DO NOT make it public without considering a solution to this problem.
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     internal class RegistryLocation : IElementLocation, INodePacketTranslatable
     {
         /// <summary>

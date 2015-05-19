@@ -17,7 +17,9 @@ namespace Microsoft.Build.Tasks
     /// <summary>
     /// There was a problem resolving this reference into a full file name.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class ReferenceResolutionException : Exception
     {
         /// <summary>

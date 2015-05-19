@@ -23,7 +23,9 @@ namespace Microsoft.Build.Collections
     /// </summary>
     /// <typeparam name="TKey">The key type</typeparam>
     /// <typeparam name="TValue">The value type</typeparam>
+#if !CORECLR
     [Serializable]
+#endif
     internal class HybridDictionary<TKey, TValue> : IDictionary<TKey, TValue>, IDictionary, ICollection where TValue : class
     {
         /// <summary>

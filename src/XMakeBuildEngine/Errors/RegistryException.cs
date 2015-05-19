@@ -12,7 +12,9 @@ namespace Microsoft.Build.Exceptions
     /// <summary>
     /// Generic exception used to wrap exceptions thrown during Registry access.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal class RegistryException : Exception
     {
         /// <summary>

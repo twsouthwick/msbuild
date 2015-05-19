@@ -19,7 +19,9 @@ namespace Microsoft.Build.Collections
     /// <summary>
     /// Equality comparer for IKeyed objects that uses Ordinal comparison.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal class OrdinalKeyedComparer : IEqualityComparer<IKeyed>
     {
         /// <summary>

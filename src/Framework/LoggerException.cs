@@ -17,7 +17,9 @@ namespace Microsoft.Build.Framework
     /// promise to never change the type's fields i.e. the type is immutable; adding new fields in the next version of the type
     /// without following certain special FX guidelines, can break both forward and backward compatibility
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     public class LoggerException : Exception
     {
         /// <summary>

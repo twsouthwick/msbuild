@@ -13,7 +13,9 @@ namespace Microsoft.Build.Exceptions
     /// <summary>
     /// Exception subclass that ToolsetReaders should throw.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     public class InvalidToolsetDefinitionException : Exception
     {
         /// <summary>

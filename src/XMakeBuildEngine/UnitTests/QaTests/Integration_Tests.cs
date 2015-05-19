@@ -938,7 +938,6 @@ namespace Microsoft.Build.UnitTests.QA
 
             return r1;
         }
-   
         #endregion
     }
 
@@ -1088,7 +1087,9 @@ namespace Microsoft.Build.UnitTests.QA
     /// <summary>
     /// Exception object for the mock task 
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     public class QAMockTaskForIntegrationTestsException : Exception
     {
         public QAMockTaskForIntegrationTestsException()

@@ -9,7 +9,9 @@ namespace Microsoft.Build.Tasks
     /// <summary>
     /// An exception thrown while parsing through an app.config.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal class AppConfigException : System.ApplicationException
     {
         /// <summary>

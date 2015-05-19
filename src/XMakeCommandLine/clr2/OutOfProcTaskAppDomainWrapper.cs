@@ -12,7 +12,9 @@ namespace Microsoft.Build.CommandLine
     /// <summary>
     /// Class for executing a task in an AppDomain
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal class OutOfProcTaskAppDomainWrapper : OutOfProcTaskAppDomainWrapperBase
     {
         /// <summary>

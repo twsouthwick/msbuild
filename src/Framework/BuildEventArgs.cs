@@ -24,7 +24,9 @@ namespace Microsoft.Build.Framework
     /// without following certain special FX guidelines, can break both
     /// forward and backward compatibility
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     public abstract class BuildEventArgs : EventArgs
     {
         /// <summary>

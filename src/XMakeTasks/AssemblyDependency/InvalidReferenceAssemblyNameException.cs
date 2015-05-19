@@ -18,7 +18,9 @@ namespace Microsoft.Build.Tasks
     /// There reference is not a well-formed fusion name *and* its not a file 
     /// that exists on disk.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class InvalidReferenceAssemblyNameException : Exception
     {
         private string _sourceItemSpec;

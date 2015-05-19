@@ -3551,7 +3551,9 @@ namespace Microsoft.Build.Tasks
         /// For flow of control & passing sufficient error context back 
         /// from ReadTextResources
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         internal sealed class TextFileException : Exception
         {
             private String _fileName;

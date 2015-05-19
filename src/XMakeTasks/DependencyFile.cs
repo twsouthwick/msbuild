@@ -12,7 +12,9 @@ namespace Microsoft.Build.Tasks
     /// Represents a single input to a compilation-style task.
     /// Keeps track of timestamp for later comparison.
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     internal class DependencyFile
     {
         // Filename

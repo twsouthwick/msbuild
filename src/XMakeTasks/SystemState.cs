@@ -23,7 +23,9 @@ namespace Microsoft.Build.Tasks
     /// <summary>
     /// Class is used to cache system state.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class SystemState : StateFileBase, ISerializable
     {
         /// <summary>
@@ -93,7 +95,9 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// Class that holds the current file state.
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         private sealed class FileState : ISerializable
         {
             /// <summary>

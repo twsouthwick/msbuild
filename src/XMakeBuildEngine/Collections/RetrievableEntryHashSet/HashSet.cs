@@ -87,7 +87,9 @@ namespace Microsoft.Build.Collections
 #if SILVERLIGHT
     public class HashSet<T> : ICollection<T>, ISet<T>
 #else
+#if !CORECLR
     [Serializable()]
+#endif
 #if !MONO
     [System.Security.Permissions.HostProtection(MayLeakOnAbort = true)]
 #endif
@@ -1721,7 +1723,9 @@ namespace Microsoft.Build.Collections
         }
 
 #if !SILVERLIGHT
+#if !CORECLR
         [Serializable()]
+#endif
 #if !MONO
         [System.Security.Permissions.HostProtection(MayLeakOnAbort = true)]
 #endif

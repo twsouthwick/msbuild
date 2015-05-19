@@ -13,7 +13,9 @@ namespace Microsoft.Build.Framework
     /// <summary>
     /// Class which represents the parameter information from the using task as a strongly typed class.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     public class TaskPropertyInfo
     {
         /// <summary>

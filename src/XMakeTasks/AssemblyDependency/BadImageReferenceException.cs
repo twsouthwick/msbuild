@@ -9,7 +9,9 @@ namespace Microsoft.Build.Tasks
     /// <summary>
     /// The reference points to a bad image.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class BadImageReferenceException : Exception
     {
         /// <summary>

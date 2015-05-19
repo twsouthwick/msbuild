@@ -14,7 +14,9 @@ namespace Microsoft.Build.Shared
     /// <summary>
     /// IKeyComparer implementation that compares AssemblyNames for using in Hashtables.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     sealed internal class AssemblyNameComparer : IComparer, IEqualityComparer, IEqualityComparer<AssemblyNameExtension>
     {
         /// <summary>

@@ -14,7 +14,9 @@ namespace Microsoft.Build.Tasks
     /// <remarks>
     /// Base class for task state files.
     /// </remarks>
+#if !CORECLR
     [Serializable()]
+#endif
     internal class StateFileBase
     {
         /// <summary>

@@ -20,7 +20,9 @@ namespace Microsoft.Build.Tasks
     /// ArgumentException was not used because it does not have a property for ActualValue.
     /// ArgumentOutOfRangeException does, but it appends its own message to yours.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class InvalidParameterValueException : Exception
     {
         /// <summary>

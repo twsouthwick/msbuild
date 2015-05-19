@@ -20,7 +20,9 @@ namespace Microsoft.Build.Tasks
     /// wrapper. So in ResolveComReference we compare the stored timestamp with the current component timestamp, and if 
     /// they are different, we regenerate the wrapper.
     /// </remarks>
+#if !CORECLR
     [Serializable()]
+#endif
     internal sealed class ResolveComReferenceCache : StateFileBase
     {
         /// <summary>

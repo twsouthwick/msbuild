@@ -9,7 +9,9 @@ namespace Microsoft.Build.Tasks
     /// <summary>
     /// Exception indicates a problem finding dependencies of a reference.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class DependencyResolutionException : Exception
     {
         /// <summary>

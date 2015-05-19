@@ -49,7 +49,9 @@ namespace Microsoft.Build.Shared
     /// The assembly name is represented internally by an AssemblyName and a string, conversion
     /// between the two is done lazily on demand.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     sealed internal class AssemblyNameExtension
     {
         private AssemblyName _asAssemblyName = null;

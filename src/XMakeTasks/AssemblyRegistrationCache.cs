@@ -15,7 +15,9 @@ namespace Microsoft.Build.Tasks
     /// <remarks>
     /// This class is a caching mechanism for the Register/UnregisterAssembly task to keep track of registered assemblies to clean up
     /// </remarks>
+#if !CORECLR
     [Serializable()]
+#endif
     internal sealed class AssemblyRegistrationCache : StateFileBase
     {
         /// <summary>

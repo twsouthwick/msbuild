@@ -1307,7 +1307,9 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// Class to contain some identity information about a file in an sdk
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         private class SdkReferenceInfo
         {
             /// <summary>
@@ -1364,7 +1366,9 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// Structure that contains the on disk representation of the SDK in memory
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         private class SDKInfo
         {
             /// <summary>

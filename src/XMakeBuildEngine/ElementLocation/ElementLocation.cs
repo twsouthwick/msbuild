@@ -22,7 +22,9 @@ namespace Microsoft.Build.Construction
     /// This object is IMMUTABLE, so that it can be passed around arbitrarily.
     /// DO NOT make these objects any larger. There are huge numbers of them and they are transmitted between nodes.
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     public abstract class ElementLocation : IElementLocation, INodePacketTranslatable, IImmutable
     {
         /// <summary>

@@ -17,7 +17,9 @@ namespace Microsoft.Build.Tasks
     /// This class is a caching mechanism for the resgen task to keep track of linked
     /// files within processed .resx files.
     /// </remarks>
+#if !CORECLR
     [Serializable()]
+#endif
     internal sealed class ResGenDependencies : StateFileBase
     {
         /// <summary>
@@ -201,7 +203,9 @@ namespace Microsoft.Build.Tasks
         /// <remarks>
         /// Represents a single .resx file in the dependency cache.
         /// </remarks>
+#if !CORECLR
         [Serializable()]
+#endif
         internal sealed class ResXFile : DependencyFile
         {
             // Files contained within this resx file.  
@@ -279,7 +283,9 @@ namespace Microsoft.Build.Tasks
         /// Represents a single assembly in the dependency cache, which may produce 
         /// 0 to many ResW files.
         /// </remarks>
+#if !CORECLR
         [Serializable()]
+#endif
         internal sealed class PortableLibraryFile : DependencyFile
         {
             private string[] _outputFiles;

@@ -58,7 +58,9 @@ namespace System.Collections.Generic {
 #if SILVERLIGHT
     public class HashSet<T> : ICollection<T>, ISet<T>
 #else
+#if !CORECLR
     [Serializable()]
+#endif
     [System.Security.Permissions.HostProtection(MayLeakOnAbort = true)]
     public class HashSet<T> : ICollection<T>, ISerializable, IDeserializationCallback, ISet<T>
 #endif
@@ -1395,7 +1397,9 @@ namespace System.Collections.Generic {
         }
 
 #if !SILVERLIGHT
+#if !CORECLR
         [Serializable()]
+#endif
         [System.Security.Permissions.HostProtection(MayLeakOnAbort = true)]
 #endif
         public struct Enumerator : IEnumerator<T>, System.Collections.IEnumerator {

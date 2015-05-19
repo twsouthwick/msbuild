@@ -18,7 +18,9 @@ namespace Microsoft.Build.CommandLine
     /// <remarks>
     /// Unlike the CommandLineSwitchException, this exception is NOT thrown for syntax errors in switches.
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class InitializationException : Exception
     {
         /// <summary>

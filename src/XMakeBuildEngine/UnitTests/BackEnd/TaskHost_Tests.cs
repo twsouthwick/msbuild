@@ -647,7 +647,9 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Create a custom message event to make sure it can get sent correctly
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         internal class MyCustomMessageEvent : BuildMessageEventArgs
         {
             /// <summary>
@@ -686,7 +688,9 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Create a custom build event to test the logging of custom build events against the task host
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         internal class MyCustomBuildEventArgs : CustomBuildEventArgs
         {
             /// <summary>
@@ -707,7 +711,9 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Class which implements a simple custom build error
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         internal class MyCustomBuildErrorEventArgs : BuildErrorEventArgs
         {
             /// <summary>
@@ -746,7 +752,9 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Class which implements a simple custom build warning
         /// </summary>
+#if !CORECLR
         [Serializable]
+#endif
         internal class MyCustomBuildWarningEventArgs : BuildWarningEventArgs
         {
             /// <summary>

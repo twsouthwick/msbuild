@@ -22,7 +22,9 @@ namespace Microsoft.Build.BackEnd
     /// <remarks>
     /// If you add fields to this class, add a custom serialization constructor and override GetObjectData().
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     internal class NodeFailedToLaunchException : Exception
     {
         /// <summary>

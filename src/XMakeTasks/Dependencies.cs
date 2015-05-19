@@ -9,7 +9,9 @@ namespace Microsoft.Build.Tasks
     /// <remarks>
     /// Represents a cache of inputs to a compilation-style task.
     /// </remarks>
+#if !CORECLR
     [Serializable()]
+#endif
     internal class Dependencies
     {
         /// <summary>

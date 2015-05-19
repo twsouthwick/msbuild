@@ -19,7 +19,9 @@ namespace Microsoft.Build.Framework
     /// version of the type without following certain special FX guidelines, can
     /// break both forward and backward compatibility
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     public class TaskCommandLineEventArgs : BuildMessageEventArgs
     {
         /// <summary>

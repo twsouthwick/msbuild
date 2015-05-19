@@ -22,7 +22,9 @@ namespace Microsoft.Build.Exceptions
     /// This is public because it may be returned in the Exceptions collection of a BuildResult.
     /// If you add fields to this class, add a custom serialization constructor and override GetObjectData().
     /// </remarks>
+#if !CORECLR
     [Serializable]
+#endif
     public class BuildAbortedException : Exception
     {
         /// <summary>

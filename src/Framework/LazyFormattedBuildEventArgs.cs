@@ -15,7 +15,9 @@ namespace Microsoft.Build.Framework
     /// <summary>
     /// Stores strings for parts of a message delaying the formatting until it needs to be shown
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     public class LazyFormattedBuildEventArgs : BuildEventArgs
     {
         /// <summary>
@@ -31,7 +33,9 @@ namespace Microsoft.Build.Framework
         /// <summary>
         /// Lock object.
         /// </summary>
+#if !CORECLR
         [NonSerialized]
+#endif
         private Object _locker;
 
         /// <summary>

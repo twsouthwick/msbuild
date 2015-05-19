@@ -13,7 +13,9 @@ namespace Microsoft.Build.CommandLine
     /// <summary>
     /// This exception is used to flag (syntax) errors in command line switches passed to the application.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     internal sealed class CommandLineSwitchException : Exception
     {
         /// <summary>

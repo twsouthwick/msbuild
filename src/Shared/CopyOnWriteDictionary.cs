@@ -39,7 +39,9 @@ namespace Microsoft.Build.Collections
     /// This class must be serializable as it is used for metadata passed to tasks, which may
     /// be run in a separate appdomain.
     /// </comment>
+#if !CORECLR
     [Serializable]
+#endif
     internal class CopyOnWriteDictionary<K, V> : IDictionary<K, V>, IDictionary where V : class
     {
 #if DEBUG
@@ -546,7 +548,9 @@ namespace Microsoft.Build.Collections
         /// </summary>
         /// <typeparam name="K1">The key type.</typeparam>
         /// <typeparam name="V1">The value type.</typeparam>
+#if !CORECLR
         [Serializable]
+#endif
         private class CopyOnWriteBackingDictionary<K1, V1> : HybridDictionary<K1, V1> where V1 : class
         {
             /// <summary>
